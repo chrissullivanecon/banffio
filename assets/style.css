@@ -827,18 +827,43 @@ p { margin: 0 0 1em; }
 }
 #program .program-day::before { display: none !important; }
 
-/* 2-col grid: Thursday spans full width, Friday and Saturday side-by-side */
+/* 2-col grid: Thursday spans full width row 1, Friday and Saturday
+   share rows 2-5 (date, talks, afternoon, evening) via subgrid so
+   sibling slots align across the two day columns. */
 #program .program-schedule {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
   gap: 1.4rem 2.5rem;
   list-style: none;
   padding: 0;
   margin: 1.4rem 0 0;
 }
-#program .program-day:first-child { grid-column: 1 / -1; }
+#program .program-day:first-child {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+#program .program-day:not(:first-child) {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: 2 / span 4;
+  row-gap: 1.4rem;
+}
+#program .program-day:not(:first-child) .program-slots {
+  display: contents;
+}
 @media (max-width: 900px) {
-  #program .program-schedule { grid-template-columns: 1fr; }
+  #program .program-schedule {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  #program .program-day:not(:first-child) {
+    display: block;
+    grid-row: auto;
+  }
+  #program .program-day:not(:first-child) .program-slots {
+    display: block;
+  }
 }
 #program .program-slot {
   display: block !important;
