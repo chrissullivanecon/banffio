@@ -1,0 +1,1178 @@
+/* =========================================================
+   Banff Empirical IO Conference
+   WPA-poster palette: cream banner + tan + ink + rust accents.
+   ========================================================= */
+
+:root {
+  /* Legacy palette (still used by .tbd-block, .program-day timeline, organizer cards) */
+  --c-ink:        #0f2a36;
+  --c-ink-2:      #1a3a4a;
+  --c-ink-3:      #2e7d8c;
+  --c-accent:     #5bbdc9;
+  --c-paper:      #f7f5ef;
+  --c-paper-2:    #efece3;
+  --c-muted:      #7a8891;
+
+  /* Type */
+  --f-serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --f-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --f-poster-display: "Big Shoulders Display", "Anton", Impact, sans-serif;
+
+  /* Poster banner palette */
+  --c-paper-banner: #E9CDA1;
+  --c-ink-banner:   #1A0E04;
+  --c-rust-banner:  #C0522A;
+  --c-parks-green:  #2D4E3A;
+
+  /* Layout */
+  --maxw:     1100px;
+  --gutter:   clamp(1.25rem, 4vw, 3rem);
+  --radius:   6px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- Reset / base ---------- */
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+body {
+  margin: 0;
+  font-family: var(--f-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--c-ink-2);
+  background: #FAF6EA;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;             /* universal safety net against resize overflow bugs */
+  max-width: 100vw;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--c-ink-3); text-decoration: none; transition: color .2s var(--ease); }
+a:hover { color: var(--c-accent); }
+h1,h2,h3 { font-family: var(--f-serif); font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+p { margin: 0 0 1em; }
+
+/* ---------- Generic sections ---------- */
+.section {
+  padding: clamp(4rem, 9vw, 7rem) var(--gutter);
+}
+/* Section background variants are defined further down in the
+   "POSTER-STYLE HERO + WPA HARMONIZATION" block with !important — those win. */
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.section__eyebrow {
+  font-size: .75rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  font-weight: 600;
+  margin: 0 0 .8rem;
+}
+.section__title {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--c-ink);
+  margin: 0 0 2rem;
+  max-width: 22ch;
+  line-height: 1.15;
+}
+.prose {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--c-ink-2);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.prose p { margin-bottom: 1.1em; }
+.prose a { color: var(--c-ink-3); text-decoration: underline; text-decoration-color: rgba(46,125,140,0.35); text-underline-offset: 2px; }
+.prose a:hover { color: var(--c-accent); text-decoration-color: var(--c-accent); }
+.prose .subhead {
+  font-family: var(--f-sans);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  margin: 2rem 0 .7rem;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 1.5rem;
+  padding: 0 0 0 1.3rem;
+  color: var(--c-ink-2);
+}
+.prose ul li,
+.prose ol li {
+  padding: .3rem 0;
+  line-height: 1.55;
+}
+.prose ul li::marker {
+  color: var(--c-accent);
+}
+
+/* ---------- TBD markers ---------- */
+.tbd-block {
+  padding: 1rem 1.2rem;
+  background: rgba(46,125,140,0.06);
+  border-left: 3px solid var(--c-accent);
+  color: var(--c-ink-2);
+  font-style: italic;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* ---------- Program schedule ---------- */
+.program-schedule {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.program-day {
+  position: relative;
+  padding-left: clamp(1.4rem, 3vw, 2.2rem);
+  border-left: 2px solid rgba(46,125,140,0.25);
+  padding-top: .25rem;
+}
+.program-day::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: .6rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  box-shadow: 0 0 0 4px var(--c-paper-2);
+}
+.program-day__date {
+  font-family: var(--f-sans);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  margin: 0 0 .35rem;
+}
+.program-day__title {
+  font-family: var(--f-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.program-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.program-slot {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.2rem;
+  align-items: baseline;
+}
+.program-slot__label {
+  font-family: var(--f-sans);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+}
+.program-slot__tag {
+  display: inline-block;
+  padding: .1em .55em;
+  background: rgba(46,125,140,0.12);
+  color: var(--c-ink-3);
+  border-radius: 3px;
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.program-slot p {
+  margin: 0;
+  color: var(--c-ink-2);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.program-slot--optional p {
+  color: var(--c-muted);
+}
+.program-slot--optional .program-slot__label {
+  color: var(--c-ink-2);
+}
+
+.program-footnote {
+  margin-top: 2rem;
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--c-muted);
+  max-width: 60ch;
+}
+
+@media (max-width: 640px) {
+  .program-slot {
+    grid-template-columns: 1fr;
+    gap: .3rem;
+  }
+  .program-day__title { font-size: 1.35rem; }
+}
+
+/* ---------- Travel & Stay ---------- */
+.travel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  margin-top: 1rem;
+}
+.travel-block {
+  font-size: 1rem;
+}
+.travel-block__title {
+  font-family: var(--f-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+.travel-block__subhead {
+  font-family: var(--f-sans);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  margin: 1.6rem 0 .6rem;
+}
+.travel-block p { color: var(--c-ink-2); line-height: 1.65; }
+.travel-block a { color: var(--c-ink-3); text-decoration: underline; text-decoration-color: rgba(46,125,140,0.35); text-underline-offset: 2px; }
+.travel-block a:hover { color: var(--c-accent); text-decoration-color: var(--c-accent); }
+
+.travel-options {
+  margin: 1.2rem 0 0;
+  padding: 0;
+}
+.travel-options__item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(26,58,74,0.12);
+}
+.travel-options__item:last-child { border-bottom: none; }
+.travel-options__item dt {
+  font-weight: 600;
+  color: var(--c-ink);
+  font-size: 1rem;
+  margin-bottom: .35rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+.travel-options__item dd {
+  margin: 0;
+  color: var(--c-ink-2);
+  font-size: .94rem;
+  line-height: 1.6;
+}
+.travel-options__item--featured {
+  background: rgba(91,189,201,0.07);
+  border-left: 3px solid var(--c-accent);
+  padding: 1.1rem 1.2rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: .4rem;
+  border-bottom: none;
+}
+.travel-options__item--featured + .travel-options__item { border-top: 1px solid rgba(26,58,74,0.12); }
+
+.badge {
+  display: inline-block;
+  padding: .15em .55em;
+  background: var(--c-accent);
+  color: #0a1f29;
+  border-radius: 3px;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.rates {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 .6rem;
+  font-size: .94rem;
+}
+.rates__caption {
+  caption-side: top;
+  text-align: left;
+  font-size: .78rem;
+  font-style: italic;
+  color: var(--c-muted);
+  padding-bottom: .5rem;
+  letter-spacing: .01em;
+}
+.rates th, .rates td {
+  padding: .65rem .25rem;
+  border-bottom: 1px solid rgba(26,58,74,0.12);
+  text-align: left;
+  vertical-align: baseline;
+}
+.rates th {
+  font-weight: 500;
+  color: var(--c-ink);
+}
+.rates td {
+  text-align: right;
+  color: var(--c-ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.rates tr:last-child th, .rates tr:last-child td { border-bottom: none; }
+
+.rates__fineprint {
+  font-size: .85rem;
+  color: var(--c-muted);
+  line-height: 1.55;
+  margin-top: .6rem;
+}
+
+@media (max-width: 900px) {
+  .travel-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ---------- Organizers ---------- */
+
+.organizers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 60rem;
+}
+.organizers li {
+  padding: 1.5rem 1.6rem;
+  background: var(--c-paper);
+  border-radius: var(--radius);
+  border: 1px solid rgba(26,58,74,0.1);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.organizers li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15,42,54,0.08);
+}
+.organizer__name {
+  font-family: var(--f-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--c-ink);
+  margin: 0 0 .25rem;
+}
+.organizer__affil {
+  font-size: .9rem;
+  color: var(--c-ink-3);
+  margin: 0 0 .5rem;
+}
+.organizer__email {
+  font-size: .82rem;
+  margin: 0;
+}
+.organizer__email a {
+  color: var(--c-ink-3);
+  text-decoration: underline;
+  text-decoration-color: rgba(46,125,140,0.35);
+  text-underline-offset: 2px;
+  word-break: break-all;
+}
+.organizer__email a:hover {
+  color: var(--c-accent);
+  text-decoration-color: var(--c-accent);
+}
+@media (max-width: 560px) {
+  .organizers { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  a { text-decoration: none; }
+  section, .program-day, .talk {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* =========================================================
+   POSTER-STYLE HERO + WPA HARMONIZATION
+   These rules override the original Inter/teal styling for
+   the sections that survive (program, registration, travel,
+   organizers) and define the new poster hero on top.
+   ========================================================= */
+
+/* === TWO-COLUMN HERO === */
+.poster-hero {
+  width: 100%;
+  max-width: 100vw;
+  background-color: var(--c-paper-banner);
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-areas: "art content";
+  gap: 0;
+  align-items: stretch;
+  overflow: hidden;                 /* safety net: clip any internal overflow so it never pushes the page wider */
+  box-sizing: border-box;
+}
+.poster-hero__art     { grid-area: art; }
+.poster-hero__content { grid-area: content; }
+
+/* Below 800px: stack art on top of content using plain block flow.
+   Block layout is more resize-robust than grid here. */
+@media (max-width: 800px) {
+  .poster-hero {
+    display: block;
+  }
+}
+.poster-hero__art {
+  width: 100%;
+  min-height: 0;
+  background-image: url('poster-scene-artonly.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 800px) {
+  .poster-hero__art {
+    aspect-ratio: 841 / 1030;
+    display: block;
+  }
+}
+.poster-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  color: var(--c-ink-banner);
+  padding: 4rem clamp(1.5rem, 4vw, 4rem) 4rem clamp(2rem, 4vw, 4rem);
+  min-width: 0;                              /* let flex/grid children shrink below intrinsic width */
+}
+@media (max-width: 800px) {
+  .poster-hero__content { padding: 2.5rem .9rem; }
+}
+
+/* Unified H1 — one heading containing the whole title block.
+   Styled as a grid: BANFF on row 1 (full span), EMPIRICAL IO + shield + CONFERENCE on row 2,
+   date + venue on row 3. */
+.poster-hero__titleblock {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: clamp(.6rem, 1.6vw, 1.3rem);
+  row-gap: 0;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  font-weight: normal;     /* per-span weights below */
+  letter-spacing: 0;
+  font-family: var(--f-poster-display);
+}
+.poster-hero__banff {
+  grid-column: 1 / -1; grid-row: 1;
+  min-width: 0;
+  font-family: var(--f-poster-display);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 10vw, 6.5rem);
+  letter-spacing: .08em;
+  line-height: .95;
+  color: var(--c-ink-banner);
+  text-transform: uppercase;
+}
+@media (min-width: 600px) {
+  .poster-hero__banff { letter-spacing: .18em; }
+}
+.poster-hero__empirical,
+.poster-hero__conference {
+  font-family: var(--f-poster-display);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 4.5vw, 2.65rem);
+  letter-spacing: .14em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--c-ink-banner);
+}
+.poster-hero__empirical  { grid-column: 1; grid-row: 2; text-align: right; }
+.poster-hero__conference { grid-column: 3; grid-row: 2; text-align: left; }
+.poster-hero__shield {
+  grid-column: 2; grid-row: 2 / span 2;
+  align-self: center;
+  width: clamp(48px, 5.5vw, 78px);
+  height: clamp(48px, 5.5vw, 78px);
+  border-radius: 50%;
+  background-color: var(--c-paper-banner);
+  background-image: url('badge-bear-shield-banner.png');
+  background-size: 130% auto;
+  background-position: center 78%;
+  background-repeat: no-repeat;
+  border: 2.5px solid var(--c-ink-banner);
+}
+.poster-hero__date,
+.poster-hero__venue {
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: clamp(.85rem, 2.5vw, 1.5rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.1;
+  color: var(--c-ink-banner);
+}
+.poster-hero__date  { grid-column: 1; grid-row: 3; text-align: right; }
+.poster-hero__venue { grid-column: 3; grid-row: 3; text-align: left; }
+
+/* Sub-desktop: collapse title block to single column. The 3-col layout only
+   has comfortable room at full desktop widths; below ~1200px CONFERENCE
+   crowds the right edge of the content column. */
+@media (max-width: 1200px) {
+  .poster-hero__titleblock {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: .3rem;
+  }
+  .poster-hero__empirical,
+  .poster-hero__conference,
+  .poster-hero__date,
+  .poster-hero__venue {
+    grid-column: 1;
+    text-align: center;
+    white-space: normal;
+  }
+  .poster-hero__banff      { grid-row: 1; }
+  .poster-hero__empirical  { grid-row: 2; }
+  .poster-hero__shield     { grid-column: 1; grid-row: 3; justify-self: center; margin: .4rem 0; }
+  .poster-hero__conference { grid-row: 4; }
+  .poster-hero__date       { grid-row: 5; margin-top: .6rem; }
+  .poster-hero__venue      { grid-row: 6; }
+}
+
+/* === SIGNPOST: ink-sketch arrow nav clustered around a central post === */
+.poster-hero__signpost {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .85rem .55rem;
+  margin: 2.8rem auto 0;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+}
+.poster-hero__signpost a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0 1.4rem;
+  color: var(--c-ink-banner);
+  font-family: var(--f-poster-display);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 1.45vw, 1.4rem);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  transition: opacity .15s ease;
+  z-index: 1;
+}
+.poster-hero__signpost a:hover { opacity: .8; }
+.signpost-arrow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+.signpost-arrow path {
+  fill: none;
+  stroke: var(--c-ink-banner);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  filter: url(#handcut-edges);
+}
+.signpost-text {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+.poster-hero__signpost a.is-left {
+  padding: 0 1.1rem 0 1.9rem;
+  justify-self: end;
+}
+.poster-hero__signpost a.is-left .signpost-text { text-align: right; }
+.poster-hero__signpost a.is-right {
+  padding: 0 1.9rem 0 1.1rem;
+  justify-self: start;
+}
+.poster-hero__signpost a.is-right .signpost-text { text-align: left; }
+
+/* At hyper-narrow widths, tighten signpost padding/font so arrows don't
+   overflow their column. */
+@media (max-width: 380px) {
+  .poster-hero__signpost {
+    gap: .65rem .35rem;
+  }
+  .poster-hero__signpost a {
+    font-size: .9rem;
+    letter-spacing: .1em !important;
+    min-height: 42px;
+  }
+  .poster-hero__signpost a.is-left  { padding: 0 .6rem 0 1.1rem; }
+  .poster-hero__signpost a.is-right { padding: 0 1.1rem 0 .6rem; }
+}
+
+/* Central post + cap */
+.poster-hero__signpost::before {
+  content: '';
+  position: absolute;
+  top: -10px; bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  background: var(--c-ink-banner);
+  z-index: 0;
+  filter: url(#handcut-edges);
+}
+.poster-hero__signpost::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 12px;
+  background: var(--c-ink-banner);
+  z-index: 0;
+  filter: url(#handcut-edges);
+}
+
+/* === CREDITS (baked-in sponsor line) === */
+.poster-hero__credits {
+  margin-top: 3.6rem;
+  text-align: center;
+  border-top: 1.5px solid var(--c-ink-banner);
+  padding-top: 1.3rem;
+}
+.credits__label {
+  margin: 0 0 .55rem;
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--c-rust-banner);
+}
+.credits__list {
+  margin: 0 0 .2rem;
+  font-family: var(--f-poster-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--c-ink-banner);
+  line-height: 1.45;
+}
+
+/* === ALTERNATING SECTION BGS === */
+.section--program      { background: #FAF6EA !important; color: var(--c-ink-banner); }
+.section--registration { background: var(--c-paper-banner) !important; color: var(--c-ink-banner); }
+.section--travel       { background: #FAF6EA !important; color: var(--c-ink-banner); }
+.section--organizers   { background: var(--c-paper-banner) !important; color: var(--c-ink-banner); }
+
+/* === EYEBROWS AS PARKS-CANADA TRAIL TAGS === */
+.section__eyebrow {
+  display: inline-block !important;
+  background: var(--c-parks-green) !important;
+  color: #FFFFFF !important;
+  font-family: var(--f-poster-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  padding: .42em 1.1em .38em !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  border-radius: 0 !important;
+  margin: 0 0 1rem !important;
+}
+/* All eyebrow chips: ink bg. Text is the OTHER section type's bg color, so
+   each chip carries a hint of the alternating band it doesn't sit on. */
+#program .section__eyebrow,
+#travel .section__eyebrow {
+  background: var(--c-ink-banner) !important;
+  color: var(--c-paper-banner) !important;
+}
+#registration .section__eyebrow,
+#organizers .section__eyebrow {
+  background: var(--c-ink-banner) !important;
+  color: #FAF6EA !important;
+}
+
+/* === ATTENDEES — roster at the bottom of the Program section === */
+.program-attendees {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--c-ink-banner);
+}
+.program-attendees__label {
+  margin: 0 0 1rem;
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--c-rust-banner);
+  font-size: 1.15rem;
+}
+.attendees {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);  /* 12 attendees ÷ 2 columns = 6 rows */
+  grid-auto-flow: column;                /* fill top-to-bottom, then start col 2 */
+  column-gap: 2.5rem;
+  row-gap: .85rem;
+}
+.attendees li {
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+}
+.attendee__name {
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-ink-banner);
+}
+.attendee__affil {
+  font-family: "Fraunces", "Georgia", serif;
+  font-weight: 400;
+  font-size: .95rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+  color: var(--c-ink-banner);
+  opacity: .8;
+}
+@media (max-width: 600px) {
+  .attendees {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+}
+
+/* === PROGRAM RESTYLE === */
+#program .program-day__date {
+  font-family: var(--f-poster-display) !important;
+  font-weight: 700;
+  letter-spacing: .16em !important;
+  text-transform: uppercase;
+  color: var(--c-rust-banner) !important;
+  font-size: 1.15rem !important;
+}
+#program .program-day__title { display: none !important; }
+#program .program-day {
+  border-top: 1.5px solid var(--c-ink-banner) !important;
+  border-left: 0 !important;
+  padding-left: 0 !important;
+  padding-top: .8rem !important;
+}
+#program .program-day::before { display: none !important; }
+
+/* 2-col grid: Thursday spans full width, Friday and Saturday side-by-side */
+#program .program-schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+}
+#program .program-day:first-child { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  #program .program-schedule { grid-template-columns: 1fr; }
+}
+#program .program-slot {
+  display: block !important;
+  grid-template-columns: none !important;
+  margin: 0 0 .9rem !important;
+}
+#program .program-slot__label {
+  display: block !important;
+  margin: 0 0 .4rem !important;
+  font-family: var(--f-poster-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: var(--c-ink-banner) !important;
+  opacity: .8;
+  font-size: 1.05rem !important;
+}
+#program .program-slot p {
+  color: var(--c-ink-banner) !important;
+  font-family: "Fraunces", "Georgia", serif !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+}
+#program .program-slot p strong {
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* === TALKS — flex row, paper title wraps to full-width row below === */
+.talks {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.talk {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 1.2rem;
+  row-gap: .15rem;
+  padding: .5rem 0;
+}
+.talk__time {
+  flex: 0 0 auto;
+  min-width: 3.5em;
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: var(--c-ink-banner);
+}
+.talk__who {
+  flex: 1 1 auto;
+  margin: 0;
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: var(--c-ink-banner);
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+.talk__who strong { font-weight: 800; }
+.talk__affil {
+  font-weight: 600;
+  font-size: .92rem;
+  letter-spacing: .08em;
+  opacity: .85;
+}
+.talk__paper {
+  flex: 1 1 100%;
+  margin: 0 0 0 4.7em;
+  font-family: "Fraunces", "Georgia", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.15rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: var(--c-ink-banner);
+  opacity: .9;
+}
+.talk--break .talk__break-label {
+  font-family: var(--f-poster-display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: var(--c-ink-banner);
+}
+@media (max-width: 600px) {
+  .talk__paper { margin-left: 4em; font-size: .9rem; }
+}
+
+/* Row alignment so Friday and Saturday talk rows line up across columns.
+   Longer affiliations ("University of Texas at Austin") wrap to 2 lines,
+   so talk rows need ~9rem to absorb the worst case. */
+#program .talks > .talk:nth-child(1),
+#program .talks > .talk:nth-child(4),
+#program .talks > .talk:nth-child(7) { min-height: 3.7rem; }
+#program .talks > .talk:nth-child(2),
+#program .talks > .talk:nth-child(3),
+#program .talks > .talk:nth-child(5) { min-height: 9rem; }
+#program .talks > .talk:nth-child(6) { min-height: 11rem; }
+
+/* Afternoon/Evening prose blocks flow naturally — no forced alignment between
+   Friday and Saturday columns. Talks already align via the .talk min-heights above. */
+
+/* === REGISTRATION / ORGANIZERS body typography === */
+#registration .section__title,
+#organizers .section__title {
+  font-family: var(--f-poster-display) !important;
+  font-weight: 900 !important;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--c-ink-banner) !important;
+}
+#registration p, #organizers p { color: var(--c-ink-banner) !important; }
+#registration strong, #organizers strong { color: var(--c-ink-banner); }
+
+/* "TBD" notice on Registration — recolor from teal to rust */
+#registration .tbd-block {
+  background: rgba(192, 82, 42, .08) !important;
+  border-left-color: var(--c-rust-banner) !important;
+  color: var(--c-ink-banner) !important;
+  font-family: "Fraunces", "Georgia", serif !important;
+  font-style: italic !important;
+}
+
+/* Registration subhead ("Saturday evening — optional add-on") */
+#registration .prose p.subhead {
+  font-family: var(--f-poster-display) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: var(--c-ink-banner) !important;
+  margin: 1.5rem 0 .5rem !important;
+}
+
+/* === TRAVEL & STAY — lede + photo side by side === */
+#travel .travel-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+  margin: 1rem 0 2.5rem;
+}
+@media (max-width: 800px) {
+  #travel .travel-intro { grid-template-columns: 1fr; }
+}
+#travel .travel-lede {
+  font-family: "Fraunces", "Georgia", serif;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--c-ink-banner);
+  margin: 0;
+}
+#travel .travel-intro__photo {
+  width: 100%;
+  min-height: 0;
+  background-image: url('venue-cafe-fall.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 800px) {
+  #travel .travel-intro__photo { aspect-ratio: 16 / 9; }
+}
+
+/* === HARMONIZED BODY TYPE — Fraunces serif in Travel / Reg / Organizers === */
+#travel .travel-block,
+#travel .travel-block p,
+#travel .travel-block ul,
+#travel .travel-block li,
+#travel .travel-options dt,
+#travel .travel-options dd,
+#travel .rates,
+#travel .rates th,
+#travel .rates td,
+#travel .rates__caption,
+#travel .rates__fineprint,
+#registration .prose p,
+#registration .reg-list,
+#registration .reg-list li,
+#organizers .organizer__name,
+#organizers .organizer__affil,
+#organizers .organizer__email,
+#organizers .organizer__email a {
+  font-family: "Fraunces", "Georgia", serif !important;
+  color: var(--c-ink-banner) !important;
+}
+
+#travel .travel-block__title {
+  font-family: "Fraunces", "Georgia", serif !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0 !important;
+  color: var(--c-ink-banner) !important;
+  margin: 0 0 .8rem !important;
+}
+
+#travel .rates th,
+#travel .rates td,
+#registration .prose p,
+#registration .reg-list li,
+#organizers .organizer__name,
+#organizers .organizer__affil {
+  font-size: 1.15rem !important;
+  letter-spacing: 0 !important;
+  line-height: 1.45 !important;
+}
+#travel .travel-options dt,
+#travel .travel-options dd {
+  font-size: 1rem !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+}
+#travel .travel-options dt { font-weight: 700 !important; }
+#travel .rates th { font-weight: 500 !important; }
+#travel .rates td { font-weight: 700 !important; }
+#travel .rates__fineprint {
+  font-size: .95rem !important;
+  font-style: italic !important;
+  opacity: .85 !important;
+  line-height: 1.5 !important;
+}
+#travel .rates__caption {
+  font-style: italic !important;
+  font-size: 1rem !important;
+  opacity: .8 !important;
+}
+
+/* Links across all harmonized sections — ink text, rust underline */
+#travel a, #registration a, #organizers a, #program a {
+  color: var(--c-ink-banner) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--c-rust-banner) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 2px !important;
+}
+#travel a:hover, #registration a:hover, #organizers a:hover, #program a:hover {
+  color: var(--c-rust-banner) !important;
+}
+
+/* "Optional" pills */
+#program .program-slot__tag {
+  color: var(--c-ink-banner) !important;
+  background: transparent !important;
+  border: 1px solid var(--c-ink-banner) !important;
+  opacity: .55 !important;
+  font-family: var(--f-poster-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: .14em !important;
+  padding: .15em .55em !important;
+  font-size: .78rem !important;
+  text-transform: uppercase !important;
+}
+
+/* Catch teal color leaks at container level */
+#travel, #registration, #organizers,
+#travel .prose, #registration .prose, #organizers .prose,
+#travel p, #registration p, #organizers p,
+#travel li, #registration li, #organizers li {
+  color: var(--c-ink-banner) !important;
+}
+
+/* Organizer card internals */
+#organizers .organizer__name { font-weight: 600 !important; }
+#organizers .organizer__affil { opacity: .8 !important; }
+#organizers .organizer__email { font-size: 1.05rem !important; }
+
+/* === PAGE CLOSER — hand-drawn ridgeline + minimal credit (replaces footer) === */
+.page-closer {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.page-closer__ridge {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.2rem;
+}
+.page-closer__copy {
+  margin: 0;
+  font-family: var(--f-poster-display);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--c-ink-banner);
+  opacity: .72;
+}
+
+/* === REGISTRATION CTA BUTTON — solid rust, WPA === */
+.reg-cta {
+  margin: 1.6rem 0 .4rem;
+}
+#registration .reg-button {
+  display: inline-block;
+  background: var(--c-rust-banner);
+  color: #FBF3E2 !important;            /* override inkpot link color */
+  font-family: var(--f-poster-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .62em 2.2em;
+  border: 2px solid var(--c-rust-banner);
+  text-decoration: none !important;     /* override forced link underline */
+  transition: background .15s ease, color .15s ease;
+}
+#registration .reg-button:hover {
+  background: transparent;
+  color: var(--c-rust-banner) !important;
+}
+.reg-cta__note {
+  display: block;
+  max-width: 46ch;
+  margin-top: .9rem;
+  font-family: "Fraunces", "Georgia", serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--c-ink-banner);
+  opacity: .8;
+}

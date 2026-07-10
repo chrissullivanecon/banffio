@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banff Empirical IO Conference &middot; October 2&ndash;3, 2026</title>
+  <meta name="description" content="Banff Empirical IO Conference at the Banff Centre, Alberta. October 2&ndash;3, 2026.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Open Graph + Twitter Card for shareable previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Banff Empirical IO Conference &middot; October 2–3, 2026">
+  <meta property="og:description" content="Banff Empirical IO Conference at the Banff Centre, Alberta. October 2–3, 2026.">
+  <meta property="og:image" content="assets/poster-scene-artonly.png">
+  <meta property="og:image:alt" content="WPA-style illustration of mountains above a turquoise lake in Banff">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Banff Empirical IO Conference · October 2–3, 2026">
+  <meta name="twitter:description" content="Banff Empirical IO Conference at the Banff Centre, Alberta. October 2–3, 2026.">
+  <meta name="twitter:image" content="assets/poster-scene-artonly.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=41">
+</head>
+<body>
+
+  <!-- Inline SVG filter: hand-cut edge wobble for signpost arrows -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="handcut-edges" x="-3%" y="-15%" width="106%" height="130%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="7" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- === TWO-COLUMN POSTER-STYLE HERO === -->
+  <section class="poster-hero" id="top">
+    <div class="poster-hero__art"
+         role="img"
+         aria-label="WPA-style illustration of the Three Sisters mountains above a turquoise lake in Banff"></div>
+    <div class="poster-hero__content">
+      <h1 class="poster-hero__titleblock">
+        <span class="poster-hero__banff">Banff</span>
+        <span class="poster-hero__empirical">Empirical IO</span>
+        <span class="poster-hero__shield" aria-hidden="true"></span>
+        <span class="poster-hero__conference">Conference</span>
+        <span class="poster-hero__date">October 2&ndash;3, 2026</span>
+        <span class="poster-hero__venue">Banff Centre, Alberta</span>
+      </h1>
+      <nav class="poster-hero__signpost" aria-label="Site sections">
+        <a class="is-left" href="#program">
+          <svg class="signpost-arrow" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 14 4 L 196 4 L 196 40 L 14 40 L 4 22 Z"/>
+          </svg>
+          <span class="signpost-text">Program</span>
+        </a>
+        <a class="is-right" href="#registration">
+          <svg class="signpost-arrow" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 4 4 L 186 4 L 196 22 L 186 40 L 4 40 Z"/>
+          </svg>
+          <span class="signpost-text">Register</span>
+        </a>
+        <a class="is-left" href="#travel">
+          <svg class="signpost-arrow" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 14 4 L 196 4 L 196 40 L 14 40 L 4 22 Z"/>
+          </svg>
+          <span class="signpost-text">Travel</span>
+        </a>
+        <a class="is-right" href="#organizers">
+          <svg class="signpost-arrow" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 4 4 L 186 4 L 196 22 L 186 40 L 4 40 Z"/>
+          </svg>
+          <span class="signpost-text">Contact</span>
+        </a>
+      </nav>
+      <div class="poster-hero__credits">
+        <p class="credits__label">Presented by</p>
+        <p class="credits__list">University of Calgary &middot; Dept of Economics</p>
+        <p class="credits__list">Research Program in Competition &amp; Regulation</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- PROGRAM -->
+    <section id="program" class="section section--program">
+      <div class="wrap">
+        <p class="section__eyebrow">Program</p>
+
+        <ol class="program-schedule">
+          <li class="program-day">
+            <p class="program-day__date">Thursday, October 1</p>
+            <div class="program-slots">
+              <div class="program-slot">
+                <span class="program-slot__label">Evening</span>
+                <p>Informal drinks at Banff Centre for anyone who has arrived early.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="program-day">
+            <p class="program-day__date">Friday, October 2</p>
+            <div class="program-slots">
+              <div class="program-slot">
+                <ol class="talks">
+                  <li class="talk talk--break">
+                    <span class="talk__time">8:30</span>
+                    <span class="talk__break-label">Breakfast at Vistas Dining Room</span>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">9:00</span>
+                    <p class="talk__who"><strong>Dan Ackerberg</strong><span class="talk__affil">University of Texas at Austin</span></p>
+                    <p class="talk__paper">Production Function Identification Under Imperfect Competition</p>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">9:40</span>
+                    <p class="talk__who"><strong>Zach Brown</strong><span class="talk__affil">University of Michigan</span></p>
+                    <p class="talk__paper">Algorithmic Coercion with Faster Pricing</p>
+                  </li>
+                  <li class="talk talk--break">
+                    <span class="talk__time">10:20</span>
+                    <span class="talk__break-label">Break</span>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">10:40</span>
+                    <p class="talk__who"><strong>El Hadi Caoui</strong><span class="talk__affil">University of Toronto</span></p>
+                    <p class="talk__paper">Estimating Consumer Preferences for LLMs: Evidence from LMArena</p>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">11:20</span>
+                    <p class="talk__who"><strong>Mitsuru Igami</strong><span class="talk__affil">University of Toronto</span></p>
+                    <p class="talk__paper">Information Sharing vs. Collusive Coordination: A BCE Approach to Algorithmic Pricing in US Multifamily Rentals</p>
+                  </li>
+                  <li class="talk talk--break">
+                    <span class="talk__time">12:00</span>
+                    <span class="talk__break-label">Lunch at Vistas Dining Room</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="program-slot">
+                <span class="program-slot__label">Afternoon</span>
+                <p>
+                  <strong>Hiking and outdoors.</strong> Optional group hike up Tunnel Mountain.
+                </p>
+              </div>
+              <div class="program-slot">
+                <span class="program-slot__label">Evening</span>
+                <p>
+                  <strong>Group dinner at 7:30&nbsp;pm</strong> at
+                  <a href="https://parkdistillery.com/" target="_blank" rel="noopener">Park Distillery</a>
+                  (219 Banff Avenue) &mdash; about a 10-minute walk down from
+                  Banff Centre.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="program-day">
+            <p class="program-day__date">Saturday, October 3</p>
+            <div class="program-slots">
+              <div class="program-slot">
+                <ol class="talks">
+                  <li class="talk talk--break">
+                    <span class="talk__time">8:30</span>
+                    <span class="talk__break-label">Breakfast at Vistas Dining Room</span>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">9:00</span>
+                    <p class="talk__who"><strong>Gaston Illanes</strong><span class="talk__affil">Northwestern University</span></p>
+                    <p class="talk__paper">A Large-Scale Evaluation of Merger Simulations</p>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">9:40</span>
+                    <p class="talk__who"><strong>Anran Li</strong><span class="talk__affil">University of Minnesota</span></p>
+                    <p class="talk__paper">Going for Broker? Intermediation in Health Insurance Markets</p>
+                  </li>
+                  <li class="talk talk--break">
+                    <span class="talk__time">10:20</span>
+                    <span class="talk__break-label">Break</span>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">10:40</span>
+                    <p class="talk__who"><strong>Michael Rubens</strong><span class="talk__affil">UCLA</span></p>
+                    <p class="talk__paper">Conduct in U.S. Labor Markets</p>
+                  </li>
+                  <li class="talk">
+                    <span class="talk__time">11:20</span>
+                    <p class="talk__who"><strong>Cailin Slattery</strong><span class="talk__affil">Berkeley Haas</span></p>
+                    <p class="talk__paper">Consolidation and Political Influence in Auto Retail</p>
+                  </li>
+                  <li class="talk talk--break">
+                    <span class="talk__time">12:00</span>
+                    <span class="talk__break-label">Lunch at Vistas Dining Room</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="program-slot program-slot--optional">
+                <span class="program-slot__label">Afternoon <span class="program-slot__tag">Optional</span></span>
+                <p>
+                  Optional group hike for anyone sticking around.
+                </p>
+              </div>
+              <div class="program-slot program-slot--optional">
+                <span class="program-slot__label">Evening <span class="program-slot__tag">Optional</span></span>
+                <p>
+                  Optional dinner in town for anyone sticking around.
+                </p>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+
+        <!-- Attendees: roster at the bottom of the program -->
+        <div class="program-attendees">
+          <p class="program-attendees__label">Attendees</p>
+          <ul class="attendees">
+            <li><span class="attendee__name">Dan Ackerberg</span> <span class="attendee__affil">University of Texas at Austin</span></li>
+            <li><span class="attendee__name">Victor Aguirregabiria</span> <span class="attendee__affil">University of Toronto</span></li>
+            <li><span class="attendee__name">Zach Brown</span> <span class="attendee__affil">University of Michigan</span></li>
+            <li><span class="attendee__name">El Hadi Caoui</span> <span class="attendee__affil">University of Toronto</span></li>
+            <li><span class="attendee__name">Rebekah Dix</span> <span class="attendee__affil">Yale University</span></li>
+            <li><span class="attendee__name">Mitsuru Igami</span> <span class="attendee__affil">University of Toronto</span></li>
+            <li><span class="attendee__name">Gaston Illanes</span> <span class="attendee__affil">Northwestern University</span></li>
+            <li><span class="attendee__name">Sarah Johnston</span> <span class="attendee__affil">University of Calgary</span></li>
+            <li><span class="attendee__name">Yunmi Kong</span> <span class="attendee__affil">Rice University</span></li>
+            <li><span class="attendee__name">Anran Li</span> <span class="attendee__affil">University of Minnesota</span></li>
+            <li><span class="attendee__name">Arvind Magesan</span> <span class="attendee__affil">University of Calgary</span></li>
+            <li><span class="attendee__name">Lorenzo Magnolfi</span> <span class="attendee__affil">Ohio State University</span></li>
+            <li><span class="attendee__name">Victoria Marone</span> <span class="attendee__affil">Yale University</span></li>
+            <li><span class="attendee__name">Charlie Murry</span> <span class="attendee__affil">University of Michigan</span></li>
+            <li><span class="attendee__name">Will Rafey</span> <span class="attendee__affil">UCLA</span></li>
+            <li><span class="attendee__name">Michael Rubens</span> <span class="attendee__affil">UCLA</span></li>
+            <li><span class="attendee__name">Marc Rysman</span> <span class="attendee__affil">Boston University</span></li>
+            <li><span class="attendee__name">Natalia Serna</span> <span class="attendee__affil">Stanford University</span></li>
+            <li><span class="attendee__name">Cailin Slattery</span> <span class="attendee__affil">Berkeley Haas</span></li>
+            <li><span class="attendee__name">Alan Sorensen</span> <span class="attendee__affil">University of Wisconsin&ndash;Madison</span></li>
+            <li><span class="attendee__name">Chris Sullivan</span> <span class="attendee__affil">University of Calgary</span></li>
+            <li><span class="attendee__name">Matt Weinberg</span> <span class="attendee__affil">Ohio State University</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="registration" class="section section--registration">
+      <div class="wrap">
+        <p class="section__eyebrow">Registration</p>
+        <div class="prose">
+          <p>
+            There will be a registration fee of CAD $200 (approx. USD $150). This
+            covers breakfast, lunch, and snack on Friday and Saturday, as well as the
+            group dinner on Friday night.
+          </p>
+
+          <p class="reg-cta">
+            <!-- TODO: replace href with the live Microsoft Form URL when registration opens -->
+            <a class="reg-button" href="#">Register</a>
+            <span class="reg-cta__note">
+              Registration opens closer to the conference. The form will ask about
+              dietary needs, whether you&rsquo;re staying Saturday night, and your
+              arrival and departure dates.
+            </span>
+          </p>
+
+          <p class="subhead">Not included</p>
+          <p>
+            Accommodation and travel to Banff are arranged individually. See
+            <a href="#travel">Travel &amp; Stay</a> for how to book a room at Banff
+            Centre in the conference block.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAVEL & STAY -->
+    <section id="travel" class="section section--travel">
+      <div class="wrap">
+        <p class="section__eyebrow">Travel &amp; Stay</p>
+
+        <div class="travel-intro">
+          <p class="travel-lede">
+            The conference will take place at the
+            <a href="https://www.banffcentre.ca/conferences" target="_blank" rel="noopener">Banff Centre</a>,
+            a hotel/conference venue on the slopes of Tunnel Mountain with sweeping
+            views of the Bow Valley. A block of rooms is held for the conference at
+            discounted rates, and each attendee books their own room directly with
+            Banff Centre.
+          </p>
+          <div class="travel-intro__photo"
+               role="img"
+               aria-label="Banff Centre with autumn larches and snow-capped peaks behind"></div>
+        </div>
+
+        <div class="travel-grid">
+
+          <!-- Left column: Getting here + Message board stacked tight -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <!-- Getting here -->
+          <article class="travel-block">
+            <h3 class="travel-block__title">Getting here</h3>
+            <p>
+              The closest airport is <strong>Calgary International (YYC)</strong>.
+              Banff Centre is about 130&nbsp;km west of the airport &mdash; a
+              1.5&ndash;2 hour drive on the TransCanada Highway.
+            </p>
+
+            <dl class="travel-options">
+              <div class="travel-options__item">
+                <dt>Shuttle</dt>
+                <dd>
+                  <a href="https://banffairporter.com/" target="_blank" rel="noopener">Banff Airporter</a>
+                  is the official shuttle of Banff Centre &mdash; drops at the
+                  Professional Development Centre (front desk), ~10 daily departures
+                  from YYC.
+                  <a href="https://explorerockies.com/airport-shuttles" target="_blank" rel="noopener">Brewster Express</a>
+                  runs daily motor coach service from YYC to Banff; reservations required.
+                </dd>
+              </div>
+
+              <div class="travel-options__item">
+                <dt>By car</dt>
+                <dd>
+                  Banff Centre offers free self-parking; the North parkade is
+                  accessible via St.&nbsp;Julien Way and the South lot via Buffalo
+                  Street.
+                </dd>
+              </div>
+
+              <div class="travel-options__item">
+                <dt>Carpool</dt>
+                <dd>
+                  Coordinate rides to and from YYC with other attendees on the
+                  <a href="#message-board">message board</a>.
+                </dd>
+              </div>
+
+            </dl>
+          </article>
+
+          <!-- Message board -->
+          <article class="travel-block" id="message-board">
+            <h3 class="travel-block__title">Message board</h3>
+            <p>
+              The message board is where attendees coordinate outside the sessions.
+              Post rides to and from YYC, share afternoon plans and activities,
+              sign up for group hikes, or find dinner partners on the
+              <a href="https://docs.google.com/spreadsheets/d/19TiNk6_jOFwwOQAZ06fONVeMoqfEqOgSrpuDQSJTK-g/edit?usp=sharing" target="_blank" rel="noopener">shared sheet</a>.
+              Anyone with the link can edit.
+            </p>
+          </article>
+
+          </div><!-- /left-column stack -->
+
+          <!-- Right column: Staying at Banff Centre + Things to do stacked tight -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <!-- Staying at Banff Centre -->
+          <article class="travel-block">
+            <h3 class="travel-block__title">Staying at Banff Centre</h3>
+            <p>
+              <strong>Book online.</strong> Go to
+              <a href="https://gettaroom.b4checkin.com/banffcentre#main" target="_blank" rel="noopener">Banff Centre reservations</a>,
+              click the Group Sign In tab at the top of the page,
+              enter group code <strong>BEM2610</strong>, then pick your dates. The
+              group rate will apply automatically.
+            </p>
+            <p>
+              <strong>Or by phone.</strong> Call Banff Centre Reservations at
+              <a href="tel:+18008847574">1-800-884-7574</a> and reference booking ID
+              <strong>BEM2610</strong>.
+            </p>
+
+            <p>
+              Group rates start at CAD $317/night, plus applicable
+              taxes and a CAD $20/room/day facility fee (covers parking, Wi-Fi, and
+              the Sally Borden fitness centre &mdash; gym, pool, climbing wall). The
+              group rate extends to three days before and after the conference,
+              subject to availability. Attendees staying off-campus will be charged a
+              CAD $30/person/day facility fee.
+            </p>
+          </article>
+
+          <!-- What to pack -->
+          <article class="travel-block">
+            <h3 class="travel-block__title">What to pack</h3>
+            <p>
+              <strong>Attire is mountain casual.</strong> October weather in Banff
+              can range from sunny 60s&deg;F (mid-teens &deg;C) to freezing temps
+              and snow; pack accordingly.
+            </p>
+          </article>
+
+          <!-- Things to do -->
+          <article class="travel-block">
+            <h3 class="travel-block__title">Things to do</h3>
+
+            <p>
+              <strong>Tunnel Mountain Group Hike.</strong> On Friday afternoon. A
+              5-minute walk from Banff Centre; ~4.5&nbsp;km round trip with sweeping
+              Bow Valley views.
+            </p>
+
+            <p><strong>Other hikes worth a visit:</strong></p>
+            <ul>
+              <li><strong>Hoodoos Trail</strong> (easy, 1.5&ndash;2&nbsp;hr) &mdash; walkable from the Centre; quiet riverside path</li>
+              <li><strong>Johnston Canyon</strong> (easy&ndash;moderate, 1&ndash;3&nbsp;hr) &mdash; 30-min drive; iconic waterfalls and cliffside catwalks</li>
+              <li><strong>Lake Agnes Tea House</strong> (moderate, 3&ndash;4&nbsp;hr) &mdash; 45-min drive to Lake Louise; classic alpine-lake hike</li>
+            </ul>
+            <p>
+              For more, see
+              <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonee-hiking" target="_blank" rel="noopener">Parks Canada Banff trails</a>.
+            </p>
+
+          </article>
+
+          </div><!-- /right-column stack -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGANIZERS & CONTACT -->
+    <section id="organizers" class="section section--organizers">
+      <div class="wrap">
+        <p class="section__eyebrow">Contact</p>
+        <ul class="organizers">
+          <li>
+            <p class="organizer__name">Sarah Johnston</p>
+            <p class="organizer__affil">University of Calgary</p>
+            <p class="organizer__email"><a href="mailto:sarah.johnston2@ucalgary.ca">sarah.johnston2@ucalgary.ca</a></p>
+          </li>
+          <li>
+            <p class="organizer__name">Arvind Magesan</p>
+            <p class="organizer__affil">University of Calgary</p>
+            <p class="organizer__email"><a href="mailto:anmagesa@ucalgary.ca">anmagesa@ucalgary.ca</a></p>
+          </li>
+          <li>
+            <p class="organizer__name">Lorenzo Magnolfi</p>
+            <p class="organizer__affil">Ohio State University</p>
+            <p class="organizer__email"><a href="mailto:email@lorenzomagnolfi.com">email@lorenzomagnolfi.com</a></p>
+          </li>
+          <li>
+            <p class="organizer__name">Chris Sullivan</p>
+            <p class="organizer__affil">University of Calgary</p>
+            <p class="organizer__email"><a href="mailto:christopher.sullivan1@ucalgary.ca">christopher.sullivan1@ucalgary.ca</a></p>
+          </li>
+        </ul>
+
+        <!-- Inked ridgeline + credit line -->
+        <div class="page-closer" aria-hidden="false">
+          <img class="page-closer__ridge"
+               src="assets/footer-ridgeline-transparent.png"
+               alt=""
+               loading="lazy">
+          <p class="page-closer__copy">Banff Empirical IO Conference &middot; 2026</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
