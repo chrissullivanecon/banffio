@@ -859,6 +859,15 @@ p { margin: 0 0 1em; }
     display: block;
   }
 }
+#program .program-note {
+  font-family: "Fraunces", "Georgia", serif;
+  color: var(--c-ink-banner);
+  opacity: .7;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: .4rem 0 1.4rem;
+  max-width: 62ch;
+}
 #program .program-slot {
   display: block !important;
   grid-template-columns: none !important;
